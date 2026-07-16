@@ -1,60 +1,104 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const skills = [
-        { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
-        { name: ".NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
-        { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-        { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
-        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-        { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-        { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "Visual Studio", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" },
-        { name: "Visual Studio Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-        { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-        { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-        { name: "Slack", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" },
-        { name: "Jira", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
-        { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
-        { name: "Swagger", icon: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" },
-        { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
-        { name: "JQuery", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" },
-        { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-        { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
-        { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-        { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
-        { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-        { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
-        { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-        { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
-        { name: "Jenkins", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
-        { name: "GitLab", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" },
-        { name: "Bitbucket", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
-        
+    const devicon = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
 
-
+    const skillGroups = [
+        {
+            category: "Languages",
+            open: true,
+            skills: [
+                { name: "C#", icon: `${devicon}/csharp/csharp-original.svg` },
+                { name: "Python", icon: `${devicon}/python/python-original.svg` },
+                { name: "JavaScript", icon: `${devicon}/javascript/javascript-original.svg` },
+                { name: "Dart", icon: `${devicon}/dart/dart-original.svg` },
+                { name: "HTML", icon: `${devicon}/html5/html5-original.svg` },
+                { name: "CSS", icon: `${devicon}/css3/css3-original.svg` },
+            ],
+        },
+        {
+            category: "Frameworks & Libraries",
+            skills: [
+                { name: ".NET", icon: `${devicon}/dotnetcore/dotnetcore-original.svg` },
+                { name: "Django", icon: `${devicon}/django/django-plain.svg` },
+                { name: "FastAPI", icon: `${devicon}/fastapi/fastapi-original.svg` },
+                { name: "Flask", icon: `${devicon}/flask/flask-original.svg` },
+                { name: "React", icon: `${devicon}/react/react-original.svg` },
+                { name: "React Native", icon: `${devicon}/react/react-original.svg` },
+                { name: "Next.js", icon: `${devicon}/nextjs/nextjs-original.svg` },
+                { name: "Flutter", icon: `${devicon}/flutter/flutter-original.svg` },
+                { name: "Tailwind CSS", icon: `${devicon}/tailwindcss/tailwindcss-original.svg` },
+                { name: "Bootstrap", icon: `${devicon}/bootstrap/bootstrap-original.svg` },
+                { name: "JQuery", icon: `${devicon}/jquery/jquery-original.svg` },
+            ],
+        },
+        {
+            category: "Databases",
+            skills: [
+                { name: "SQL Server", icon: `${devicon}/microsoftsqlserver/microsoftsqlserver-plain.svg` },
+                { name: "PostgreSQL", icon: `${devicon}/postgresql/postgresql-original.svg` },
+                { name: "MySQL", icon: `${devicon}/mysql/mysql-original.svg` },
+            ],
+        },
+        {
+            category: "Tools & Platforms",
+            skills: [
+                { name: "Git", icon: `${devicon}/git/git-original.svg` },
+                { name: "GitHub", icon: `${devicon}/github/github-original.svg` },
+                { name: "Docker", icon: `${devicon}/docker/docker-original.svg` },
+                { name: "Linux", icon: `${devicon}/linux/linux-original.svg` },
+                { name: "Postman", icon: `${devicon}/postman/postman-original.svg` },
+                { name: "Swagger", icon: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" },
+                { name: "Visual Studio", icon: `${devicon}/visualstudio/visualstudio-plain.svg` },
+                { name: "Visual Studio Code", icon: `${devicon}/vscode/vscode-original.svg` },
+                { name: "Slack", icon: `${devicon}/slack/slack-original.svg` },
+                { name: "Jira", icon: `${devicon}/jira/jira-original.svg` },
+            ],
+        },
     ];
 
     const skillsContainer = document.getElementById("skillsContainer");
+    if (!skillsContainer) return;
 
-    skills.forEach(skill => {
-        const skillDiv = document.createElement("div");
-        skillDiv.classList.add("skill");
+    skillGroups.forEach(group => {
+        const details = document.createElement("details");
+        details.classList.add("skills-group");
+        details.open = Boolean(group.open);
 
-        const img = document.createElement("img");
-        img.src = skill.icon;
-        img.alt = skill.name;
+        const summary = document.createElement("summary");
+        summary.classList.add("skills-group__header");
 
-        const name = document.createElement("span");
-        name.textContent = skill.name;
+        const label = document.createElement("span");
+        label.classList.add("skills-group__label");
+        label.textContent = group.category;
 
-        skillDiv.appendChild(img);
-        skillDiv.appendChild(name);
-        skillsContainer.appendChild(skillDiv);
+        const count = document.createElement("span");
+        count.classList.add("skills-group__count");
+        count.textContent = group.skills.length;
+
+        summary.appendChild(label);
+        summary.appendChild(count);
+        details.appendChild(summary);
+
+        const grid = document.createElement("div");
+        grid.classList.add("skills-container");
+
+        group.skills.forEach(skill => {
+            const skillDiv = document.createElement("div");
+            skillDiv.classList.add("skill");
+
+            const img = document.createElement("img");
+            img.src = skill.icon;
+            img.alt = skill.name;
+            img.loading = "lazy";
+
+            const name = document.createElement("span");
+            name.textContent = skill.name;
+
+            skillDiv.appendChild(img);
+            skillDiv.appendChild(name);
+            grid.appendChild(skillDiv);
+        });
+
+        details.appendChild(grid);
+        skillsContainer.appendChild(details);
     });
 });

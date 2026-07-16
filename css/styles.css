@@ -3407,9 +3407,19 @@ img.u-pull-left {
     align-items : center;
 }
 
+.about-info__pic-block {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
 .about-info__pic {
     object-fit     : cover;
-    margin         : 0;
+    object-position: center;
+    width          : 100%;
+    max-width      : 480px;
+    height         : auto;
+    margin         : 0 auto;
     vertical-align : bottom;
     filter: grayscale(100%);
 }
@@ -3503,12 +3513,53 @@ img.u-pull-left {
     left             : 0;
 }
 
+.timeline__details > .timeline__header {
+    cursor      : pointer;
+    display     : block;
+    position    : relative;
+    padding-right: 2.4rem;
+    list-style  : none;
+    outline-offset: 4px;
+}
+
+/* hide the native disclosure marker */
+.timeline__details > .timeline__header::-webkit-details-marker {
+    display : none;
+}
+
+/* chevron indicator */
+.timeline__details > .timeline__header::after {
+    content    : "";
+    position   : absolute;
+    top        : .9rem;
+    right      : .4rem;
+    width      : .8rem;
+    height     : .8rem;
+    border-right : 2px solid var(--color-text-light);
+    border-bottom: 2px solid var(--color-text-light);
+    transform  : rotate(45deg);
+    transition : transform .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.timeline__details[open] > .timeline__header::after {
+    transform : rotate(-135deg);
+}
+
+.timeline__details > .timeline__header:hover::after {
+    border-color : var(--color-1);
+}
+
+.timeline__details > .timeline__header:hover .timeline__title {
+    color : var(--color-1);
+}
+
 .timeline__title {
     font-family   : var(--font-1);
     font-weight   : 500;
     font-size     : var(--text-lg);
     margin-top    : 0;
     margin-bottom : var(--vspace-0_125);
+    transition    : color .3s ease-in-out;
 }
 
 .timeline__meta {
@@ -3652,12 +3703,18 @@ img.u-pull-left {
     left     : 0;
 }
 
+/* Thumbnails hold both wide UI screenshots and logo marks, so `contain`
+   fits the whole image instead of centre-cropping it. The background fills
+   the leftover space and backs transparent SVGs. */
 .folio-list__item-pic img {
-    vertical-align : bottom;
-    object-fit     : cover;
-    width          : var(--item-min-height);
-    height         : var(--item-min-height);
-    margin         : 0;
+    vertical-align   : bottom;
+    object-fit       : contain;
+    object-position  : center;
+    background-color : var(--color-white);
+    padding          : .6rem;
+    width            : var(--item-min-height);
+    height           : var(--item-min-height);
+    margin           : 0;
 }
 
 .folio-list__item-pic::before,
