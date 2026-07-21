@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { name: "C#", icon: `${devicon}/csharp/csharp-original.svg` },
                 { name: "Python", icon: `${devicon}/python/python-original.svg` },
                 { name: "JavaScript", icon: `${devicon}/javascript/javascript-original.svg` },
+                { name: "TypeScript", icon: `${devicon}/typescript/typescript-original.svg` },
                 { name: "Dart", icon: `${devicon}/dart/dart-original.svg` },
                 { name: "HTML", icon: `${devicon}/html5/html5-original.svg` },
                 { name: "CSS", icon: `${devicon}/css3/css3-original.svg` },
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "Frameworks & Libraries",
             skills: [
                 { name: ".NET", icon: `${devicon}/dotnetcore/dotnetcore-original.svg` },
+                { name: "Node.js", icon: `${devicon}/nodejs/nodejs-original.svg` },
+                { name: "Express.js", icon: `${devicon}/express/express-original.svg` },
                 { name: "Django", icon: `${devicon}/django/django-plain.svg` },
                 { name: "FastAPI", icon: `${devicon}/fastapi/fastapi-original.svg` },
                 { name: "Flask", icon: `${devicon}/flask/flask-original.svg` },
